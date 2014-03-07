@@ -3,6 +3,30 @@ CSS Coding Standards
 
 CSS Coding Standards you must conform to when writing CSS in XHTMLized projects.
 
+## Table of contents
+
+- [Terminology](#terminology)
+- [Write valid CSS](#write-valid-css)
+- [Indentation](#indentation)
+- [Line endings](#line-endings)
+- [Encoding of CSS files](#encoding-of-css-files)
+- [Naming conventions](#naming-conventions)
+- [URLs](#urls)
+- [Values](#values)
+- [Fonts](#fonts)
+- [Selectors](#selectors)
+- [Multiple selectors](#multiple-selectors)
+- [Properties](#properties)
+- [Shorthand properties](#shorthand-properties)
+- [Order of properties](#order-of-properties)
+- [Properties with multiple values](#properties-with-multiple-values)
+- [Vendor prefixed properties](#vendor-prefixed-properties)
+- [Comments](#comments)
+- [main.css](#maincss)
+- [Page specific styles](#page-specific-styles)
+- [IE styles](#ie-styles)
+- [CSS formatting cheatsheet](#css-formatting-cheatsheet)
+
 ## Terminology
 
 Concise terminology used in these standards:
@@ -14,7 +38,6 @@ selector {
 ```
 
 property: value makes a *declaration*. Selector and declarations makes a *rule*.
-
 
 ## Write valid CSS
 
@@ -53,7 +76,7 @@ Do not use indentation for selectors.
 			}
 ```
 
-## Line Endings
+## Line endings
 
 Files should be formatted with \n as the line ending (Unix line endings), not \r\n (Windows line endings) or \r (Apple OS's). 
 
@@ -183,7 +206,7 @@ Every declaration should be on its own line below the opening brace. Each proper
 }
 ```
 
-## Shorthand Properties
+## Shorthand properties
 
 Use shorthand properties when possible:
 
@@ -393,6 +416,6 @@ Use IE specific rules immediately after the code you are fixing in main.css, for
 }
 ```
 
-## CSS Formatting Cheatsheet
+## CSS formatting cheatsheet
 
 ![CSS Formatting Cheatsheet](css-formatting-cheatsheet.png?raw=true)
