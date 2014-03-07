@@ -395,3 +395,4 @@ Use IE specific rules immediately after the code you are fixing in main.css, for
 
 ## CSS Formatting Cheatsheet
 
+![CSS Formatting Cheatsheet](css-formatting-cheatsheet.png?raw=true)
