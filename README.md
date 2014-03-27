@@ -34,7 +34,7 @@ Concise terminology used in these standards:
 
 ```css
 selector {
-	property: value;
+  property: value;
 }
 ```
 
@@ -67,14 +67,14 @@ Do not use indentation for selectors.
 /* Wrong */
 .sec-nav {}
 
-	.sec-nav li {
-	}
+  .sec-nav li {
+  }
  
-		.sec-nav li a {
-		}
+    .sec-nav li a {
+    }
  
-			.sec-nav li a:hover {
-			}
+      .sec-nav li a:hover {
+      }
 ```
 
 ## Line endings
@@ -134,12 +134,12 @@ Do not use unit with 0.
 ```css
 /* Correct */
 .nav a {
-	padding: 5px 0 5px 2px;
+  padding: 5px 0 5px 2px;
 }
 
 /* Wrong */
 .nav a {
-	padding: 5px 0px 5px 2px;
+  padding: 5px 0px 5px 2px;
 }
 ```
 
@@ -147,12 +147,12 @@ Do not use default values if they are not necessary to override inherited values
 ```css
 /* Correct */
 .nav a {
-    background: url(../images/nav.png) no-repeat;
+  background: url(../images/nav.png) no-repeat;
 }
 
 /* Wrong */
 .nav a {
-	background: transparent url(../images/nav.png) no-repeat top left;
+  background: transparent url(../images/nav.png) no-repeat top left;
 }
 ```
 
@@ -194,16 +194,16 @@ Multiple selectors should each be on a single line, with no space after each com
 
 Every declaration should be on its own line below the opening brace. Each property should:
 
-- have a single tab before the property name and a single space before the property value.
+- have a single sof tab with 2 spaces before the property name and a single space before the property value.
 - end in a semi-colon.
 
 ```css
 .site-name span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    background: url(../images/logo.png) no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: url(../images/logo.png) no-repeat;
 }
 ```
 
@@ -213,8 +213,8 @@ Use shorthand properties when possible:
 
 ```css
 .nav a {
-    padding: 5px 0;
-    background: url(../images/nav.png) no-repeat right bottom;
+  padding: 5px 0;
+  background: url(../images/nav.png) no-repeat right bottom;
 }
 ```
 
@@ -224,56 +224,56 @@ Order of properties should have the following structure: box model, typography a
 
 ```css
 selector {
-	display: ;
-	visibility: ;
-	float: ;
-	clear: ;
-	position: ;
-	top: ;
-	right: ;
-	bottom: ;
-	left: ;
-	z-index: ;
-	width: ;
-	min-width: ;
-	max-width: ;
-	height: ;
-	min-height: ;
-	max-height: ;
-	overflow: ;
-	margin: ;
-	padding: ;
-	border: ;
-	outline: ;
-	list-style: ;
-	table-layout: ;
-	caption-side: ;
-	border-collapse: ;
-	border-spacing: ;
-	empty-cells: ;
-	font: ;
-	font-family: ;
-	font-size: ;
-	line-height: ;
-	font-weight: ;
-	text-align: ;
-	text-indent: ;
-	text-transform: ;
-	text-decoration: ;
-	letter-spacing: ;
-	word-spacing: ;
-	white-space: ;
-	vertical-align: ;
-	cursor: ;
-	content: ;
-	quotes: ;
-	color: ;
-	background: ;
-	background-color: ;
-	background-image: ;
-	background-repeat: ;
-	background-position: ;
-	opacity: ;
+  display: ;
+  visibility: ;
+  float: ;
+  clear: ;
+  position: ;
+  top: ;
+  right: ;
+  bottom: ;
+  left: ;
+  z-index: ;
+  width: ;
+  min-width: ;
+  max-width: ;
+  height: ;
+  min-height: ;
+  max-height: ;
+  overflow: ;
+  margin: ;
+  padding: ;
+  border: ;
+  outline: ;
+  list-style: ;
+  table-layout: ;
+  caption-side: ;
+  border-collapse: ;
+  border-spacing: ;
+  empty-cells: ;
+  font: ;
+  font-family: ;
+  font-size: ;
+  line-height: ;
+  font-weight: ;
+  text-align: ;
+  text-indent: ;
+  text-transform: ;
+  text-decoration: ;
+  letter-spacing: ;
+  word-spacing: ;
+  white-space: ;
+  vertical-align: ;
+  cursor: ;
+  content: ;
+  quotes: ;
+  color: ;
+  background: ;
+  background-color: ;
+  background-image: ;
+  background-repeat: ;
+  background-position: ;
+  opacity: ;
 }
 ```
 
@@ -319,8 +319,8 @@ This comment style is used for commenting particular page elements. It has 1 emp
 ```css
 /* Pager */
 .pager {
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
 }
 ```
 
@@ -350,26 +350,26 @@ main.css is the main CSS file of CSS on Sails Framework. It has the following ba
  
 **************************************************************************
  
-	1. BASE
-		1.1 Reset
-		1.2 Accessibility Navigation & Hide
-		1.3 Clearfix
-		1.4 Default Styles
-		1.5 Image Replacement
-		1.6 Fonts
-	
-	2. COMMON
-		2.1 Container
-		2.2 Header
-		2.3 Navigation
-		2.4 Content
-		2.5 Sidebar
-		2.6 Footer
-	
-	3. PAGES
-		3.1 Home page
-		3.2 Sub page 1
-		3.3 Sub page 2
+  1. BASE
+    1.1 Reset
+    1.2 Accessibility Navigation & Hide
+    1.3 Clearfix
+    1.4 Default Styles
+    1.5 Image Replacement
+    1.6 Fonts
+  
+  2. COMMON
+    2.1 Container
+    2.2 Header
+    2.3 Navigation
+    2.4 Content
+    2.5 Sidebar
+    2.6 Footer
+  
+  3. PAGES
+    3.1 Home page
+    3.2 Sub page 1
+    3.3 Sub page 2
  
 *************************************************************************/
 ```
@@ -409,11 +409,11 @@ Use IE specific rules immediately after the code you are fixing in main.css, for
 
 ```css
 .box {
-	width: 75%;
+  width: 75%;
 }
  
 .ie8 .box {
-	width: 76%;
+  width: 76%;
 }
 ```
 
