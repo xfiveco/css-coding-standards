@@ -7,13 +7,10 @@ CSS Coding Standards you must conform to when writing CSS in XHTMLized projects.
 
 - [Terminology](#terminology)
 - [Write valid CSS](#write-valid-css)
-- [Indentation](#indentation)
 - [Line endings](#line-endings)
 - [Encoding of CSS files](#encoding-of-css-files)
 - [Naming conventions](#naming-conventions)
-- [URLs](#urls)
 - [Values](#values)
-- [Fonts](#fonts)
 - [Selectors](#selectors)
 - [Multiple selectors](#multiple-selectors)
 - [Properties](#properties)
@@ -21,11 +18,10 @@ CSS Coding Standards you must conform to when writing CSS in XHTMLized projects.
 - [Order of properties](#order-of-properties)
 - [Properties with multiple values](#properties-with-multiple-values)
 - [Vendor prefixed properties](#vendor-prefixed-properties)
+- [Preprocessors](#preprocessors)
 - [Comments](#comments)
-- [main.css](#maincss)
-- [Page specific styles](#page-specific-styles)
+- [Styles organization](#styles-organization)
 - [IE styles](#ie-styles)
-- [CSS formatting cheatsheet](#css-formatting-cheatsheet)
 - [License](#license)
 
 ## Terminology
@@ -42,40 +38,9 @@ property: value makes a *declaration*. Selector and declarations makes a *rule*.
 
 ## Write valid CSS
 
-All CSS code must be valid CSS 2.1 or CSS3.
+All CSS code must be valid CSS3 or CSS 2.1.
 
 When using vendor prefixed properties, you can ignore CSS validation errors it generates.
-
-## Indentation
-
-Do not use indentation for selectors.
-
-```css
-/* Correct */
-.sec-nav {
-}
-
-.sec-nav li {
-}
-
-.sec-nav li a {
-}
-
-.sec-nav li a:hover {
-}
-
-/* Wrong */
-.sec-nav {}
-
-  .sec-nav li {
-  }
- 
-    .sec-nav li a {
-    }
- 
-      .sec-nav li a:hover {
-      }
-```
 
 ## Line endings
 
@@ -98,20 +63,7 @@ Always use hyphens in class names. Do not use underscores or CamelCase notation.
 .SecNav
 ```
 
-## URLs
-
-URLs are written without optional single quote (') or double quote ("):
-
-```css
-url(../images/logo.png)
-```
-
 ## Values
-Use pixels to define font sizes:
-
-```css
-font-size: 14px;
-```
 
 Always define generic font families like sans-serif or serif.
 
@@ -155,10 +107,6 @@ Do not use default values if they are not necessary to override inherited values
   background: transparent url(../images/nav.png) no-repeat top left;
 }
 ```
-
-## Fonts
-
-Store @font-face fonts source files to `_ui/fonts` folder and fonts definitions to `1.6 Fonts` section in main.css.
 
 ## Selectors
 
@@ -220,62 +168,7 @@ Use shorthand properties when possible:
 
 ## Order of properties
 
-Order of properties should have the following structure: box model, typography and graphic layer. The order of properties shown below is not strict but shows the how the order is structured; properties belonging to the box model goes first, typography properties goes second and graphic layer properties is added last.
-
-```css
-selector {
-  display: ;
-  visibility: ;
-  float: ;
-  clear: ;
-  position: ;
-  top: ;
-  right: ;
-  bottom: ;
-  left: ;
-  z-index: ;
-  width: ;
-  min-width: ;
-  max-width: ;
-  height: ;
-  min-height: ;
-  max-height: ;
-  overflow: ;
-  margin: ;
-  padding: ;
-  border: ;
-  outline: ;
-  list-style: ;
-  table-layout: ;
-  caption-side: ;
-  border-collapse: ;
-  border-spacing: ;
-  empty-cells: ;
-  font: ;
-  font-family: ;
-  font-size: ;
-  line-height: ;
-  font-weight: ;
-  text-align: ;
-  text-indent: ;
-  text-transform: ;
-  text-decoration: ;
-  letter-spacing: ;
-  word-spacing: ;
-  white-space: ;
-  vertical-align: ;
-  cursor: ;
-  content: ;
-  quotes: ;
-  color: ;
-  background: ;
-  background-color: ;
-  background-image: ;
-  background-repeat: ;
-  background-position: ;
-  opacity: ;
-}
-```
+Order of properties should have the following structure: box model, typography and graphic layer.```
 
 ## Properties with multiple values
 
@@ -295,23 +188,41 @@ Specify all vendor prefixed properties and use the default property last, after 
 border-radius: 5px;
 ```
 
+## Preprocessors
+
+- Limit nesting to 1 level deep. Reassess any nesting more than 2 levels deep. This prevents overly-specific CSS selectors.
+- Avoid large numbers of nested rules. Break them up when readability starts to be affected. Preference to avoid nesting that spreads over more than 20 lines.
+- Always place `@extend` statements on the first lines of a declaration block.
+- Where possible, group `@include` statements at the top of a declaration block, after any `@extend` statements.
+
+```css
+.selector-1 {
+  @extend .other-rule;
+  @include clearfix();
+  @include box-sizing(border-box);
+  
+  margin: 10px;
+  padding: 10px;
+}
+```
+
 ## Comments
 
-Follow the comments style used in main.css files (see the next section). The comments blocks should be maximum of 80 characters wide.
+Follow the comments style used in normalize.css. The comments blocks should be maximum of 80 characters wide.
 
 This comment style is used as the separator of the main sections. There are 2 empty lines before and after it:
 
 ```css
-/* 1. BASE
---------------------------------------------------------------------------
-========================================================================*/
+/* ==========================================================================
+   Section comment block
+   ========================================================================== */
 ```
 
 The following comment style is used as the separator of the subsections of the main sections. It has 2 empty lines before it and 1 empty line after it:
 
 ```css
-/* 2.4 Content
-------------------------------------------------------------------------*/
+/* Sub-section comment block
+   ========================================================================== */
 ```
 
 This comment style is used for commenting particular page elements. It has 1 empty line before it and no empty lines after it (it is immediately followed by the rules):
@@ -336,67 +247,9 @@ Use upper case for the first letter in comments:
 /* pager */
 ```
 
-## main.css
+## Styles organization
 
-main.css is the main CSS file of CSS on Sails Framework. It has the following base structure:
-
-```css
-/*************************************************************************
- 
-  CSS on Sails Framework
-  Title: Site Name
-  Author: XHTMLized (http://xhtmlized.com)
-  Date: March 2014
- 
-**************************************************************************
- 
-  1. BASE
-    1.1 Reset
-    1.2 Accessibility Navigation & Hide
-    1.3 Clearfix
-    1.4 Default Styles
-    1.5 Image Replacement
-    1.6 Fonts
-  
-  2. COMMON
-    2.1 Container
-    2.2 Header
-    2.3 Navigation
-    2.4 Content
-    2.5 Sidebar
-    2.6 Footer
-  
-  3. PAGES
-    3.1 Home page
-    3.2 Sub page 1
-    3.3 Sub page 2
- 
-*************************************************************************/
-```
-
-- 1. BASE section resets browser styles and defines basic styling
-- 2. COMMON section is for styles common to all pages or at least two pages
-- 3. PAGES section defines styles for particular pages.
-
-## Page specific styles
-
-Define page specific styles in section 3. PAGES of main.css.
-
-Use body class when styling needs to be limited to a particular page. When that is the case, use the following naming convention:
-
-```css
-.homepage {
-}
- 
-.page-about {
-}
- 
-.page-contact {
-}
- 
-.page-news {
-} 
-```
+Follow the recommendations for [writing styles](https://github.com/xhtmlized/generator-xh#writing-styles) described in XH Generator.
 
 ## IE Styles
 
@@ -416,10 +269,6 @@ Use IE specific rules immediately after the code you are fixing in main.css, for
   width: 76%;
 }
 ```
-
-## CSS formatting cheatsheet
-
-![CSS Formatting Cheatsheet](css-formatting-cheatsheet.png)
 
 ## License
 
