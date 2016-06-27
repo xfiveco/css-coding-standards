@@ -1,7 +1,7 @@
 CSS Coding Standards
 ====================
 
-CSS Coding Standards you must conform to when writing CSS in XHTMLized projects.
+CSS Coding Standards you must conform to when writing CSS in Xfive projects.
 
 ## Table of contents
 
@@ -17,11 +17,9 @@ CSS Coding Standards you must conform to when writing CSS in XHTMLized projects.
 - [Shorthand properties](#shorthand-properties)
 - [Order of properties](#order-of-properties)
 - [Properties with multiple values](#properties-with-multiple-values)
-- [Vendor prefixed properties](#vendor-prefixed-properties)
 - [Preprocessors](#preprocessors)
 - [Comments](#comments)
 - [Styles organization](#styles-organization)
-- [IE styles](#ie-styles)
 - [License](#license)
 
 ## Terminology
@@ -38,7 +36,7 @@ property: value makes a *declaration*. Selector and declarations makes a *rule*.
 
 ## Write valid CSS
 
-All CSS code must be valid CSS3 or CSS 2.1.
+All CSS code must be valid CSS3.
 
 When using vendor prefixed properties, you can ignore CSS validation errors it generates.
 
@@ -96,17 +94,7 @@ Do not use unit with 0.
 ```
 
 Do not use default values if they are not necessary to override inherited values.
-```css
-/* Correct */
-.nav a {
-  background: url(../images/nav.png) no-repeat;
-}
 
-/* Wrong */
-.nav a {
-  background: transparent url(../images/nav.png) no-repeat top left;
-}
-```
 
 ## Selectors
 
@@ -151,24 +139,16 @@ Every declaration should be on its own line below the opening brace. Each proper
   top: 0;
   left: 0;
   z-index: 10;
-  background: url(../images/logo.png) no-repeat;
 }
 ```
 
 ## Shorthand properties
 
-Use shorthand properties when possible:
-
-```css
-.nav a {
-  padding: 5px 0;
-  background: url(../images/nav.png) no-repeat right bottom;
-}
-```
+Use shorthand properties when possible.
 
 ## Order of properties
 
-Order of properties should have the following structure: box model, typography and graphic layer.```
+Order of properties can have the following structure: box model, typography and graphic layer or order properties alphabetically. 
 
 ## Properties with multiple values
 
@@ -178,15 +158,6 @@ When properties can have multiple values, each value should be separated with a 
 font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, lucida, sans-serif;
 ```
 
-## Vendor prefixed properties
-
-Specify all vendor prefixed properties and use the default property last, after vendor prefixed properties:
-
-```css
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-```
 
 ## Preprocessors
 
@@ -249,26 +220,7 @@ Use upper case for the first letter in comments:
 
 ## Styles organization
 
-Follow the recommendations for [writing styles](https://github.com/xhtmlized/generator-xh#writing-styles) described in XH Generator.
-
-## IE Styles
-
-Use conditional classes for IE specific styles. The projects are set up with the following classes:
-
-- .ie8 targets IE8
-- .oldie targets IE8
-
-Use IE specific rules immediately after the code you are fixing in main.css, for example:
-
-```css
-.box {
-  width: 75%;
-}
- 
-.ie8 .box {
-  width: 76%;
-}
-```
+Follow the recommendations for [writing styles](https://github.com/xfiveco/generator-xh#writing-styles) described in XH Generator.
 
 ## License
 
