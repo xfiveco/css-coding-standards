@@ -42,7 +42,7 @@ When using vendor prefixed properties, you can ignore CSS validation errors it g
 
 ## Line endings
 
-Files should be formatted with \n as the line ending (Unix line endings), not \r\n (Windows line endings) or \r (Apple OS's). 
+Files should be formatted with \n as the line ending (Unix line endings), not \r\n (Windows line endings) or \r (Apple OS's).
 
 ## Encoding of CSS files
 
@@ -79,7 +79,7 @@ Shorten hexidecimal color values to 3 digits when possible:
 background: #fff;
 ```
 
-Do not use unit with 0.
+If you use 0 as a value, do not add a unit (px, em, etc.) after it.
 
 ```css
 /* Correct */
@@ -103,7 +103,7 @@ Selectors should be on a single line, with a space after the selector, followed 
 ```css
 .nav li {
 }
- 
+
 .nav a {
 }
 ```
@@ -148,13 +148,13 @@ Use shorthand properties when possible.
 
 ## Order of properties
 
-Order of properties can have the following structure: box model, typography and graphic layer or order properties alphabetically. 
+Order of properties can have the following structure: box model, typography and graphic layer or order properties alphabetically.
 
 ## Properties with multiple values
 
 When properties can have multiple values, each value should be separated with a space.
 
-```css	
+```css
 font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, lucida, sans-serif;
 ```
 
@@ -171,7 +171,7 @@ font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, lucida, sans-serif
   @extend .other-rule;
   @include clearfix();
   @include box-sizing(border-box);
-  
+
   margin: 10px;
   padding: 10px;
 }
